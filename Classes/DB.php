@@ -3,7 +3,7 @@
 class DB
 {
     private string $host = 'localhost';
-    private string $db = 'exo204';
+    private string $db = 'exo205';
     private string $user = 'root';
     private string $password = '';
     private static ?PDO $dbInstance = null;
