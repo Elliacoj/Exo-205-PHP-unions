@@ -9,12 +9,12 @@ require_once "./Classes/DB.php";
  */
 
 $stmt = DB::getInstance()->prepare("
-                                            SELECT username, password, email FROM admin
-                                            UNION 
-                                            SELECT username, password, email FROM client
-                                            UNION 
-                                            SELECT username, password, email FROM user
-                                            ");
+        SELECT username, password, email FROM admin
+        UNION 
+        SELECT username, password, email FROM client
+        UNION 
+        SELECT username, password, email FROM user
+");
 
 if($stmt->execute()) {
     echo "<pre>";
@@ -23,12 +23,12 @@ if($stmt->execute()) {
 }
 
 $stmt = DB::getInstance()->prepare("
-                                            SELECT username, password, email FROM admin
-                                            UNION ALL
-                                            SELECT username, password, email FROM client
-                                            UNION ALL
-                                            SELECT username, password, email FROM user
-                                            ");
+        SELECT username, password, email FROM admin
+        UNION ALL
+        SELECT username, password, email FROM client
+        UNION ALL
+        SELECT username, password, email FROM user
+");
 
 if($stmt->execute()) {
     echo "<pre>";
